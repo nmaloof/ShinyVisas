@@ -115,7 +115,8 @@ ui <- dashboardPage(
                                 infoBoxOutput(outputId = "MinValue"),
                                 infoBoxOutput(outputId = "MaxValue"),
                                 infoBoxOutput(outputId = "MeanValue"),
-                                infoBoxOutput(outputId = "MedianValue")
+                                infoBoxOutput(outputId = "MedianValue"),
+                                infoBoxOutput(outputId = "FullTime")
                             ),
                             tabPanel(
                                 title = "Job Title",
@@ -132,7 +133,8 @@ ui <- dashboardPage(
                                 infoBoxOutput(outputId = "MinValue2"),
                                 infoBoxOutput(outputId = "MaxValue2"),
                                 infoBoxOutput(outputId = "MeanValue2"),
-                                infoBoxOutput(outputId = "MedianValue2")
+                                infoBoxOutput(outputId = "MedianValue2"),
+                                infoBoxOutput(outputId = "FullTime2")
                             )
                         )
                     )

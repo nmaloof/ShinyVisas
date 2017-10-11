@@ -104,6 +104,10 @@ server <- function(input, output, session){
         dat <- Visas[(SOC_NAME == input$SpecificJob) & CASE_STATUS == "CERTIFIED"]
         infoBox("Median $", median(dat$PREVAILING_WAGE), icon = icon("calculator"), color = "purple", fill = T)
     })
+    output$FullTime <- renderInfoBox({
+        dat <- Visas[(SOC_NAME == input$SpecificJob) & CASE_STATUS == "CERTIFIED"]
+        infoBox("Full Time", sum(dat$FULL_TIME_POSITION == "Y"), icon = icon("credit-card-alt"), color = "purple", fill = T)
+    })
     #---Second Half---#
     output$MinValue2 <- renderInfoBox({
         dat <- getJobsTitle()[CASE_STATUS == "CERTIFIED"]
@@ -120,6 +124,10 @@ server <- function(input, output, session){
     output$MedianValue2 <- renderInfoBox({
         dat <- getJobsTitle()[CASE_STATUS == "CERTIFIED"]
         infoBox("Median $", median(dat$PREVAILING_WAGE), icon = icon("calculator"), color = "purple", fill = T)
+    })
+    output$FullTime2 <- renderInfoBox({
+        dat <- getJobsTitle()[CASE_STATUS == "CERTIFIED"]
+        infoBox("Full Time", sum(dat$FULL_TIME_POSITION == "Y"), icon = icon("credit-card-alt"), color = "purple", fill = T)
     })
     
         
