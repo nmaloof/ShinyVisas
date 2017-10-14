@@ -25,7 +25,7 @@ server <- function(input, output, session){
     
     #-----Get The Long/Lat-----#
     getJobLocat <- reactive({
-        Locat <- Visas[SOC_NAME == input$SpecificJob] %>% select(., lat, lon) %>% 
+        Locat <- Visas[SOC_NAME == input$SpecificJob & CASE_STATUS == "CERTIFIED"] %>% select(., lat, lon) %>% 
             mutate(., latlong = paste(lat, lon, sep = ':'))
         return(Locat)
     })
